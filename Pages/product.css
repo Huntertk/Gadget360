@@ -1,0 +1,23 @@
+.product-main-container{
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+.product-img{
+    border-radius: 10px;
+    width: 80%;
+}
+.product-container{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #AAC8A7;
+    border-radius: 18px;
+}
+.product-details-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
