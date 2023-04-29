@@ -6,7 +6,10 @@ import 'aos/dist/aos.css'
 import { Context } from '../Components/Context'
 const Cart = () => {
   const context = useContext(Context)
-
+  const total = context.cartItems.reduce((total, current) => {
+    return total += current.price
+  },0)
+console.log(total)
   const renderCart = context.cartItems.map((item) => {
     return <div key={item.id} className="cart-item-container"
             data-aos="fade-up"
@@ -34,7 +37,7 @@ const Cart = () => {
     { context.cartItems.length > 0 ? renderCart  : <h1>Your Cart Is Empty</h1>}
     
     
-    <h3>Total : ₹ 0</h3> 
+    <h3>Total : ₹ {total}</h3> 
     </div>
   )
 }
