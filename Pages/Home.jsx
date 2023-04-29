@@ -3,9 +3,6 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 import { BsCart } from "react-icons/bs";
 import { AiFillLeftCircle, AiFillRightCircle,AiFillStar,AiFillCheckCircle } from "react-icons/ai";
 import { TbTruckReturn,TbTruck } from "react-icons/tb";
-import img from '../src/assets/images/background.webp'
-import img1 from '../src/assets/images/background1.webp'
-import img2 from '../src/assets/images/background2.webp'
 import barImg from '../src/assets/images/home-tab-deal-bar.png'
 import './home.css'
 import Aos from 'aos';
@@ -14,9 +11,11 @@ import 'aos/dist/aos.css'
 const Home = () => {
   const [count, setCount] = useState(0)
   const backgroundData = [
-    img,
-    img1,
-    img2
+    'https://cdn.shopify.com/s/files/1/0057/8938/4802/files/551-Desktop_2_1440x.jpg?v=1682661291',
+    'https://cdn.shopify.com/s/files/1/0057/8938/4802/files/new-dimension_desktop_1440x.jpg?v=1682347857',
+    'https://cdn.shopify.com/s/files/1/0057/8938/4802/files/1550-desktop_9e577988-bcbd-491d-b353-b5d65ee9456b_1440x.jpg?v=1682661291',
+    'https://cdn.shopify.com/s/files/1/0057/8938/4802/files/131_desktop-new_1440x.jpg?v=1682347857',
+    'https://cdn.shopify.com/s/files/1/0057/8938/4802/files/DDnew-dimension_desktop_65851fdc-8162-46b6-b808-472ea00401b9_1440x.jpg?v=1682600881'
   ]
 
   const featureProductData = [
