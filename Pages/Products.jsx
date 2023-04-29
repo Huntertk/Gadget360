@@ -5,10 +5,11 @@ import './product.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Context } from '../Components/Context';
+import ProductsContainer from '../Components/ProductsContainer';
 
 const Products = () => {
   const context = useContext(Context)
-  console.log(context)
+  // console.log(context.allProduct)
 
   const [count, setCount] = useState(0)
   const backgroundData = [
@@ -39,22 +40,11 @@ const Products = () => {
       }
   }
 
+  
 
   const renderProduct = context.allProduct.map((product) => {
-    return <div key={product.id} className="product-container"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom">
-        <img className='product-img' src={product.img} alt="" />
-        
-        <div className="product-details-wrapper">
-        <div className="product-details">
-            <p className="product-name">{product.name}</p>
-            <p className="product-price">₹ {product.price}</p>
-            <AiFillStar className='star-icon' /> <span className='rating'>{product.rating}</span>
-        </div>
-            <BsCart  className='product-cart'/>
-        </div>
-      </div>
+    return <ProductsContainer key={product.id} product={product} />
+
   })
   useEffect(() => {
     Aos.init()
@@ -77,7 +67,7 @@ const Products = () => {
         </div>
       </div>
       <h1>All Products</h1>
-      {renderProduct}
+     {renderProduct}
     </div>
   )
 }

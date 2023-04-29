@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BsCartFill, BsCart,BsTextRight,BsXLg } from "react-icons/bs";
 import logo from '../src/assets/images/logo.png'
 import {NavLink} from 'react-router-dom'
+import { Context } from './Context';
 
 import './header.css'
 
 const Header = () => {
     const [navOpen, setNavOpen] = useState(false)
+    const context = useContext(Context)
+
     const toggleNav = () => {
         setNavOpen((prev) => {
             return prev ? false : true
@@ -28,7 +31,7 @@ const Header = () => {
         </NavLink>
         <div className="icon-container">
             <NavLink to='cart' onClick={() => {setNavOpen(false)}}>
-                <BsCart className='cart-icon' />
+                {context.cartItems.length > 0 ? <BsCartFill className='cart-icon' /> : <BsCart className='cart-icon' />}
             </NavLink>
             {
                 navOpen ? <BsXLg className='cart-icon' 

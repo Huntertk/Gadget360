@@ -7,6 +7,7 @@ import barImg from '../src/assets/images/home-tab-deal-bar.png'
 import './home.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [count, setCount] = useState(0)
@@ -43,7 +44,11 @@ const Home = () => {
   ]
 
   const renderFeatureProduct = featureProductData.map((product) => {
-    return <div key={product.id} className="feature-product-container"
+
+    return <NavLink to='products' key={product.id}>
+
+    
+     <div  className="feature-product-container"
             data-aos="fade-up"
             data-aos-anchor-placement="center-bottom">
           <img src={product.img} alt="" className='feature-product-img'/>
@@ -55,10 +60,11 @@ const Home = () => {
               <AiFillStar className='star-icon' /> <span className='rating'>{product.rating}</span>
             </div>
             <div className="button-wrapper">
-              <BsCart className='product-cart-icon' />
+              {/* <BsCart className='product-cart-icon' /> */}
             </div>
           </div>
         </div>
+        </NavLink>
   })
 
   const swappingImgLeft = () =>{

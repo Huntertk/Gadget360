@@ -21,6 +21,7 @@
     flex-direction: column;
     background: #DEF5E5;
     border-radius: 18px;
+    box-shadow: 4px 10px 15px #000;
 }
 .product-details-wrapper{
     width: 100%;
