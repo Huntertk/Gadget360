@@ -49,10 +49,10 @@ const Home = () => {
 
     
      <div  className="feature-product-container"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom">
+          data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom"
+     >
           <img src={product.img} alt="" className='feature-product-img'/>
-        
           <div className="feature-product-details">
             <div className="feature-product-wrapper">
               <p className="feature-product-name">{product.name}</p>
@@ -92,7 +92,7 @@ const Home = () => {
   },[])
 
   return (
-    <div className='home-container ' >
+    <div className='home-container'>
       <div className="img-swapping-container">
         <img src={backgroundData[count]} alt="" className='home-background-img'/>
         <div className="img-swapping-btn-container">
@@ -107,9 +107,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="feature-product-container" 
-        data-aos="fade-up"
-        data-aos-anchor-placement="center-bottom">
+      <div className="feature-product-container" >
         <div className="feature-display-bar-container">
           <img src={barImg} alt="bar-img" className='bar-img' />
           <h1 className="absolute-heading-bar">The Summer Sale 60% off</h1>
