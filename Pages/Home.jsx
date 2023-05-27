@@ -8,6 +8,7 @@ import './home.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const [count, setCount] = useState(0)
@@ -92,7 +93,11 @@ const Home = () => {
   },[])
 
   return (
-    <div className='home-container'>
+    <motion.div className='home-container'
+    initial={{opacity:0}}
+    animate={{opacity: 1}}
+    exit={{opacity:0}}
+    >
       <div className="img-swapping-container">
         <img src={backgroundData[count]} alt="" className='home-background-img'/>
         <div className="img-swapping-btn-container">
@@ -137,7 +142,7 @@ const Home = () => {
     
       </div>
       
-    </div>
+    </motion.div>
   )
 }
 

@@ -6,6 +6,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Context } from '../Components/Context';
 import ProductsContainer from '../Components/ProductsContainer';
+import { motion } from 'framer-motion';
 
 const Products = () => {
   const context = useContext(Context)
@@ -52,7 +53,11 @@ const Products = () => {
 
 
   return (
-    <div className='product-main-container'>
+    <motion.div className='product-main-container'
+    initial={{opacity:0}}
+    animate={{opacity: 1}}
+    exit={{opacity:0}}
+    >
       <div className="img-swapping-container">
         <img src={backgroundData[count]} alt="" className='home-background-img'/>
         <div className="img-swapping-btn-container">
@@ -68,7 +73,7 @@ const Products = () => {
       </div>
       <h1>All Products</h1>
      {renderProduct}
-    </div>
+    </motion.div>
   )
 }
 

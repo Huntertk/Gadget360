@@ -5,6 +5,7 @@ import './cart.css'
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { Context } from '../Components/Context'
+import { motion } from 'framer-motion';
 
 const Cart = () => {
   const context = useContext(Context)
@@ -59,7 +60,11 @@ console.log(context.cartItems)
     Aos.init()
   },[])
   return (
-    <div className='cart-container'>
+    <motion.div className='cart-container'
+    initial={{opacity:0}}
+    animate={{opacity: 1}}
+    exit={{opacity:0}}
+    >
       <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/551-Desktop_2_1440x.jpg?v=1682661291" alt="" className='background-img'/>
       <h1>Cart</h1>
 
@@ -117,7 +122,7 @@ console.log(context.cartItems)
         </form>
            }
       </div>
-    </div>
+    </motion.div>
   )
 }
 
