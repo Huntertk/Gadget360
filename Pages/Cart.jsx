@@ -61,9 +61,9 @@ console.log(context.cartItems)
   },[])
   return (
     <motion.div className='cart-container'
-    initial={{opacity:0}}
-    animate={{opacity: 1}}
-    exit={{opacity:0}}
+    initial={{width:0}}
+    animate={{width: '100%'}}
+    exit={{ x: window.innerWidth}}
     >
       <img src="https://cdn.shopify.com/s/files/1/0057/8938/4802/files/551-Desktop_2_1440x.jpg?v=1682661291" alt="" className='background-img'/>
       <h1>Cart</h1>

@@ -94,9 +94,9 @@ const Home = () => {
 
   return (
     <motion.div className='home-container'
-    initial={{opacity:0}}
-    animate={{opacity: 1}}
-    exit={{opacity:0}}
+    initial={{width:0}}
+    animate={{width: '100%'}}
+    exit={{ x: window.innerWidth}}
     >
       <div className="img-swapping-container">
         <img src={backgroundData[count]} alt="" className='home-background-img'/>
